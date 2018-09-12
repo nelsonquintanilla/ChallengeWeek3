@@ -2,26 +2,36 @@ package com.applaudostudios.tourguideappchallenge;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private FragmentPagerAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Find the view pager that will allow the user to swipe between fragments
-        ViewPager viewPager = findViewById(R.id.viewpager);
+        tabLayout = findViewById(R.id.tab_layout);
+        viewPager = findViewById(R.id.viewpager);
+        adapter = new FragmentPagerAdapter(getSupportFragmentManager());
 
-        // Create an adapter that knows which fragment should be shown on each page
-        SimpleFragmentPagerAdapter adapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager());
+        adapter.AddFragment(new BeachesFragment(), "Beaches");
+        adapter.AddFragment(new HikingFragment(), "Hiking Places");
+        adapter.AddFragment(new MuseumsFragment(), "Museums");
+        adapter.AddFragment(new ParksFragment(), "Parks");
 
-        // Set the adapter onto the view pager
         viewPager.setAdapter(adapter);
-
-        TabLayout tabLayout = findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);
+
+        // Remove shadow from the action bar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setElevation(0);
     }
 }

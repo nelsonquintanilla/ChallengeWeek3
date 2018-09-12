@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recycler_view_parks"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ParksFragment">
+    android:scrollbars="vertical"
+    tools:context=".ParksFragment" >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Park" />
+</android.support.v7.widget.RecyclerView>
 
-</FrameLayout>
+
+

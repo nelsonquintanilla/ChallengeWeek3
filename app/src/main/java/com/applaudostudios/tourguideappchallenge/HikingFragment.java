@@ -13,17 +13,18 @@ import android.view.ViewGroup;
  */
 public class HikingFragment extends Fragment {
 
+    View v;
 
     public HikingFragment() {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_hiking, container, false);
+        v = inflater.inflate(R.layout.fragment_hiking, container, false);
+        return v;
     }
 
 }
