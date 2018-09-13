@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 
 public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
@@ -33,5 +34,7 @@ public class MainActivity extends AppCompatActivity {
         // Remove shadow from the action bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.setElevation(0);
+
     }
+
 }

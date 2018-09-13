@@ -1,6 +1,7 @@
 package com.applaudostudios.tourguideappchallenge;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,7 +18,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MuseumsFragment extends Fragment {
+public class MuseumsFragment extends Fragment implements CallBack {
     View v;
     private RecyclerView myRecyclerView;
     private List<Place> mPlaceList;
@@ -35,6 +36,7 @@ public class MuseumsFragment extends Fragment {
         myRecyclerView = v.findViewById(R.id.recycler_view_museums);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), mPlaceList);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerViewAdapter.setCallBack(this);
         myRecyclerView.setAdapter(recyclerViewAdapter);
         return v;
     }
@@ -51,4 +53,8 @@ public class MuseumsFragment extends Fragment {
         mPlaceList.add(new Place("museo 2"));
     }
 
+    @Override
+    public void onItemClick() {
+        startActivity(new Intent(getActivity(), DetailsActivity.class));
+    }
 }

@@ -1,6 +1,7 @@
 package com.applaudostudios.tourguideappchallenge;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
@@ -19,7 +20,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BeachesFragment extends Fragment {
+public class BeachesFragment extends Fragment implements CallBack{
     View v;
     private RecyclerView myRecyclerView;
     private List<Place> mPlaceList;
@@ -36,6 +37,7 @@ public class BeachesFragment extends Fragment {
         myRecyclerView = v.findViewById(R.id.recycler_view_beaches);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), mPlaceList);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerViewAdapter.setCallBack(this);
         myRecyclerView.setAdapter(recyclerViewAdapter);
         return v;
     }
@@ -50,5 +52,10 @@ public class BeachesFragment extends Fragment {
         mPlaceList.add(new Place("El Tunco"));
         mPlaceList.add(new Place("Los Cobanos"));
         mPlaceList.add(new Place("La libertad"));
+    }
+
+    @Override
+    public void onItemClick() {
+        startActivity(new Intent(getActivity(), DetailsActivity.class));
     }
 }
