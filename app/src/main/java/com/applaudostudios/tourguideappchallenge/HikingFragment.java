@@ -45,14 +45,16 @@ public class HikingFragment extends Fragment implements CallBack {
         super.onCreate(savedInstanceState);
 
         mPlaceList = new ArrayList<>();
-        mPlaceList.add(new Place("Los Cóbanos", R.drawable.los_cobanos));
-        mPlaceList.add(new Place("Salinitas", R.drawable.salinitas));
-        mPlaceList.add(new Place("El Tunco", R.drawable.el_tunco));
-        mPlaceList.add(new Place("El Zonte", R.drawable.el_zonte));
-        mPlaceList.add(new Place("Costa del Sol", R.drawable.costa_del_sol));
-        mPlaceList.add(new Place("Costa Azúl", R.drawable.costa_azul));
-        mPlaceList.add(new Place("El Cuco", R.drawable.el_cuco));
-        mPlaceList.add(new Place("Puerto La Libertad", R.drawable.port_la_libertad));
+        mPlaceList.add(new Place("Izalco Volcano", R.drawable.volcan_izalco));
+        mPlaceList.add(new Place("Santa Ana Volcano", R.drawable.volcan_santa_ana));
+        mPlaceList.add(new Place("El Imposible Park", R.drawable.el_imposible));
+        mPlaceList.add(new Place("El Boquerón", R.drawable.el_boqueron));
+        mPlaceList.add(new Place("El Pital", R.drawable.el_pital));
+        mPlaceList.add(new Place("La Puerta del Diablo", R.drawable.la_puerta_del_diablo));
+        mPlaceList.add(new Place("El Bicentenario", R.drawable.bicentenario));
+        mPlaceList.add(new Place("Cerro verde", R.drawable.cerro_verde));
+        mPlaceList.add(new Place("Walter Thilo Deininger Park", R.drawable.walter_thilo_deininger));
+        mPlaceList.add(new Place("Jardín Botánico", R.drawable.jardin_botanico));
     }
 
     @Override

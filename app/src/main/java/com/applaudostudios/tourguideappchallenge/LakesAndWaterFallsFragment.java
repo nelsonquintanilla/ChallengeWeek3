@@ -18,12 +18,12 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ParksFragment extends Fragment implements CallBack {
+public class LakesAndWaterFallsFragment extends Fragment implements CallBack {
     View v;
     private RecyclerView myRecyclerView;
     private List<Place> mPlaceList;
 
-    public ParksFragment() {
+    public LakesAndWaterFallsFragment() {
         // Required empty public constructor
     }
 
@@ -31,8 +31,8 @@ public class ParksFragment extends Fragment implements CallBack {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        v = inflater.inflate(R.layout.fragment_parks, container, false);
-        myRecyclerView = v.findViewById(R.id.recycler_view_parks);
+        v = inflater.inflate(R.layout.fragment_lakes_and_waterfalls, container, false);
+        myRecyclerView = v.findViewById(R.id.recycler_view_lakes_and_waterfalls);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), mPlaceList);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerViewAdapter.setCallBack(this);
@@ -45,15 +45,13 @@ public class ParksFragment extends Fragment implements CallBack {
         super.onCreate(savedInstanceState);
 
         mPlaceList = new ArrayList<>();
-        mPlaceList.add(new Place("Los Cóbanos", R.drawable.los_cobanos));
-        mPlaceList.add(new Place("Salinitas", R.drawable.salinitas));
-        mPlaceList.add(new Place("El Tunco", R.drawable.el_tunco));
-        mPlaceList.add(new Place("El Zonte", R.drawable.el_zonte));
-        mPlaceList.add(new Place("Costa del Sol", R.drawable.costa_del_sol));
-        mPlaceList.add(new Place("Costa Azúl", R.drawable.costa_azul));
-        mPlaceList.add(new Place("El Cuco", R.drawable.el_cuco));
-        mPlaceList.add(new Place("Puerto La Libertad", R.drawable.port_la_libertad));
-
+        mPlaceList.add(new Place("Alegria Lagoon", R.drawable.laguna_de_alegria));
+        mPlaceList.add(new Place("Los Tercios Waterfalls", R.drawable.los_tercios));
+        mPlaceList.add(new Place("Suchitlán Lake", R.drawable.suchitlan));
+        mPlaceList.add(new Place("Tamanique Waterfalls", R.drawable.tamanique));
+        mPlaceList.add(new Place("Chorros de la Calera Waterfalls", R.drawable.chorros_de_la_calera));
+        mPlaceList.add(new Place("Golfo de Fonseca", R.drawable.golfo_de_fonseca));
+        mPlaceList.add(new Place("Coatepeque Lake", R.drawable.lago_de_coatepeque));
     }
 
     @Override

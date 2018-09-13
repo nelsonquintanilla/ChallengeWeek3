@@ -5,9 +5,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
-import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
@@ -26,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
         adapter.AddFragment(new BeachesFragment(), "Beaches");
         adapter.AddFragment(new HikingFragment(), "Hiking Places");
-        adapter.AddFragment(new MuseumsFragment(), "Museums");
-        adapter.AddFragment(new ParksFragment(), "Parks");
+        adapter.AddFragment(new TownsAndArchaeologicalPlacesFragment(), "Cultural Places");
+        adapter.AddFragment(new LakesAndWaterFallsFragment(), "Lakes and Waterfalls");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
