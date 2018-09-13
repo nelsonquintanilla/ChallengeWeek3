@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,6 +42,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.title.setText(mData.get(position).getName());
+        holder.image.setImageResource(mData.get(position).getPhoto());
     }
 
     @Override
@@ -50,12 +52,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView title;
+        private ImageView image;
         private ConstraintLayout itemPlace;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            itemPlace = itemView.findViewById(R.id.place_item_id);
             title = itemView.findViewById(R.id.place_name);
+            image = itemView.findViewById(R.id.image_place);
+            itemPlace = itemView.findViewById(R.id.place_item_id);
             itemPlace.setOnClickListener(this);
         }
 

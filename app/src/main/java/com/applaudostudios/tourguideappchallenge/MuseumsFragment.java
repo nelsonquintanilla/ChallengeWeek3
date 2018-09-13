@@ -46,11 +46,14 @@ public class MuseumsFragment extends Fragment implements CallBack {
         super.onCreate(savedInstanceState);
 
         mPlaceList = new ArrayList<>();
-        mPlaceList.add(new Place("museo marte"));
-        mPlaceList.add(new Place("museo nacional"));
-        mPlaceList.add(new Place("museo de historia"));
-        mPlaceList.add(new Place("museo 1"));
-        mPlaceList.add(new Place("museo 2"));
+        mPlaceList.add(new Place("Los Cóbanos", R.drawable.los_cobanos));
+        mPlaceList.add(new Place("Salinitas", R.drawable.salinitas));
+        mPlaceList.add(new Place("El Tunco", R.drawable.el_tunco));
+        mPlaceList.add(new Place("El Zonte", R.drawable.el_zonte));
+        mPlaceList.add(new Place("Costa del Sol", R.drawable.costa_del_sol));
+        mPlaceList.add(new Place("Costa Azúl", R.drawable.costa_azul));
+        mPlaceList.add(new Place("El Cuco", R.drawable.el_cuco));
+        mPlaceList.add(new Place("Puerto La Libertad", R.drawable.port_la_libertad));
     }
 
     @Override
