@@ -46,13 +46,13 @@ public class LakesAndWaterFallsFragment extends Fragment implements CallBack {
         super.onCreate(savedInstanceState);
 
         mPlaceList = new ArrayList<>();
-        mPlaceList.add(new Place("Alegria Lagoon", R.drawable.laguna_de_alegria, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
-        mPlaceList.add(new Place("Los Tercios Waterfalls", R.drawable.los_tercios, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
-        mPlaceList.add(new Place("Suchitlán Lake", R.drawable.suchitlan, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
-        mPlaceList.add(new Place("Tamanique Waterfalls", R.drawable.tamanique, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
-        mPlaceList.add(new Place("Chorros de la Calera Waterfalls", R.drawable.chorros_de_la_calera, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
-        mPlaceList.add(new Place("Golfo de Fonseca", R.drawable.golfo_de_fonseca, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
-        mPlaceList.add(new Place("Coatepeque Lake", R.drawable.lago_de_coatepeque, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
+        mPlaceList.add(new Place("Alegria Lagoon", R.drawable.laguna_de_alegria, "+503 2257 7777", "http://guiaturisticasalvadorena.blogspot.com/2014/04/laguna-de-alegria-usulutan.html"));
+        mPlaceList.add(new Place("Los Tercios Waterfalls", R.drawable.los_tercios, "+503 2257 7777", "http://www.elsalvadorturismo.com.sv/turismoelsalvador/el-salvador-rural-y-cultural/suchitoto-el-salvador/lostercios.html"));
+        mPlaceList.add(new Place("Suchitlán Lake", R.drawable.suchitlan, "+503 2257 7777", "http://www.turismo.com.sv/destinos/lago-suchitlan.php"));
+        mPlaceList.add(new Place("Tamanique Waterfalls", R.drawable.tamanique, "+503 2257 7777", "http://magazine.elsalvador.com/mg/nota_3_imagenes.asp?idArt=7706200&idCat=19978"));
+        mPlaceList.add(new Place("Chorros de la Calera Waterfalls", R.drawable.chorros_de_la_calera, "+503 2257 7777", "http://guiaturisticasalvadorena.blogspot.com/2014/08/los-chorros-de-la-calera.html"));
+        mPlaceList.add(new Place("Golfo de Fonseca", R.drawable.golfo_de_fonseca, "+503 2257 7777", "http://www.elsalvadorturismo.com.sv/turismoelsalvador/areasnaturales/golfo-de-fonseca-y-parque-conchagua/index.html"));
+        mPlaceList.add(new Place("Coatepeque Lake", R.drawable.lago_de_coatepeque, "+503 2257 7777", "http://elsalvador.travel/es/places/coatepeque/"));
     }
 
     @Override

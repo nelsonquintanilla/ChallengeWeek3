@@ -46,13 +46,13 @@ public class TownsAndArchaeologicalPlacesFragment extends Fragment implements Ca
         super.onCreate(savedInstanceState);
 
         mPlaceList = new ArrayList<>();
-        mPlaceList.add(new Place("Atáco", R.drawable.ataco, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
-        mPlaceList.add(new Place("Apaneca", R.drawable.apaneca, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
-        mPlaceList.add(new Place("Nahuizalco", R.drawable.nahuizalco, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
-        mPlaceList.add(new Place("Suchitoto", R.drawable.suchitoto, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
-        mPlaceList.add(new Place("San Andrés", R.drawable.san_andres, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
-        mPlaceList.add(new Place("Juayúa", R.drawable.juayua, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
-        mPlaceList.add(new Place("The Maya ruins of Tazumal", R.drawable.tazumal, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
+        mPlaceList.add(new Place("Atáco", R.drawable.ataco, "+503 2257 7777", "https://www.mipuebloysugente.com/apps/blog/show/18928814-concepcion-de-ataco-ahuachapan"));
+        mPlaceList.add(new Place("Apaneca", R.drawable.apaneca, "+503 2257 7777", "http://elsalvador.travel/es/places/apaneca-2/"));
+        mPlaceList.add(new Place("Nahuizalco", R.drawable.nahuizalco, "+503 2257 7777", "http://www.turismo.com.sv/destinos/nahuizalco.php"));
+        mPlaceList.add(new Place("Suchitoto", R.drawable.suchitoto, "+503 2257 7777", "http://www.elsalvadorturismo.com.sv/turismoelsalvador/el-salvador-rural-y-cultural/suchitoto-el-salvador/index.html"));
+        mPlaceList.add(new Place("San Andrés", R.drawable.san_andres, "+503 2257 7777", "http://www.fundar.org.sv/sanandre.html"));
+        mPlaceList.add(new Place("Juayúa", R.drawable.juayua, "+503 2257 7777", "http://www.turismo.com.sv/destinos/juayua.php"));
+        mPlaceList.add(new Place("The Maya ruins of Tazumal", R.drawable.tazumal, "+503 2257 7777", "http://www.fundar.org.sv/tazumal.html"));
     }
 
     @Override
