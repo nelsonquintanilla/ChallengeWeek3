@@ -49,14 +49,14 @@ public class BeachesFragment extends Fragment implements CallBack{
         super.onCreate(savedInstanceState);
 
         mPlaceList = new ArrayList<>();
-        mPlaceList.add(new Place("Los Cóbanos", R.drawable.los_cobanos, "+503 2257 7777"));
-        mPlaceList.add(new Place("Salinitas", R.drawable.salinitas, "+503 2257 7777"));
-        mPlaceList.add(new Place("El Tunco", R.drawable.el_tunco, "+503 2257 7777"));
-        mPlaceList.add(new Place("El Zonte", R.drawable.el_zonte, "+503 2257 7777"));
-        mPlaceList.add(new Place("Costa del Sol", R.drawable.costa_del_sol, "+503 2257 7777"));
-        mPlaceList.add(new Place("Costa Azúl", R.drawable.costa_azul, "+503 2257 7777"));
-        mPlaceList.add(new Place("El Cuco", R.drawable.el_cuco, "+503 2222 2222"));
-        mPlaceList.add(new Place("Puerto La Libertad", R.drawable.port_la_libertad, "+503 2257 7777"));
+        mPlaceList.add(new Place("Los Cóbanos", R.drawable.los_cobanos, "+503 2257 7777", "http://www.turismo.com.sv/destinos/playa-los-cobanos.php"));
+        mPlaceList.add(new Place("Salinitas", R.drawable.salinitas, "+503 2257 7777", "http://www.mitur.gob.sv/travel/playa-salinitas/"));
+        mPlaceList.add(new Place("El Tunco", R.drawable.el_tunco, "+503 2257 7777", "http://www.mitur.gob.sv/en/travel/playa-el-tunco/"));
+        mPlaceList.add(new Place("El Zonte", R.drawable.el_zonte, "+503 2257 7777", "http://www.mitur.gob.sv/en/travel/playa-el-zonte-2/"));
+        mPlaceList.add(new Place("Costa del Sol", R.drawable.costa_del_sol, "+503 2257 7777", "http://www.mitur.gob.sv/en/travel/costa-del-sol/"));
+        mPlaceList.add(new Place("Costa Azúl", R.drawable.costa_azul, "+503 2257 7777", "http://elsalvador.travel/es/places/playa-costa-azul/"));
+        mPlaceList.add(new Place("El Cuco", R.drawable.el_cuco, "+503 2222 2222", "http://www.elsalvadortravelnetwork.com/playa-el-cuco.html"));
+        mPlaceList.add(new Place("Puerto La Libertad", R.drawable.port_la_libertad, "+503 2257 7777", "http://www.viajeroselsalvador.com/puerto-de-la-libertad.html"));
 
     }
 

@@ -7,11 +7,21 @@ public class Place implements Parcelable {
     private String name;
     private int photo;
     private String phoneNumber;
+    private String website;
 
-    public Place(String name, int photo, String phoneNumber) {
+    public Place(String name, int photo, String phoneNumber, String website) {
         this.name = name;
         this.photo = photo;
         this.phoneNumber = phoneNumber;
+        this.website = website;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
     }
 
     public String getPhoneNumber() {
@@ -38,7 +48,6 @@ public class Place implements Parcelable {
         this.photo = photo;
     }
 
-
     @Override
     public int describeContents() {
         return 0;
@@ -49,12 +58,14 @@ public class Place implements Parcelable {
         dest.writeString(this.name);
         dest.writeInt(this.photo);
         dest.writeString(this.phoneNumber);
+        dest.writeString(this.website);
     }
 
     protected Place(Parcel in) {
         this.name = in.readString();
         this.photo = in.readInt();
         this.phoneNumber = in.readString();
+        this.website = in.readString();
     }
 
     public static final Parcelable.Creator<Place> CREATOR = new Parcelable.Creator<Place>() {

@@ -44,16 +44,16 @@ public class HikingFragment extends Fragment implements CallBack {
         super.onCreate(savedInstanceState);
 
         mPlaceList = new ArrayList<>();
-        mPlaceList.add(new Place("Izalco Volcano", R.drawable.volcan_izalco, "+503 2257 7777"));
-        mPlaceList.add(new Place("Santa Ana Volcano", R.drawable.volcan_santa_ana, "+503 2257 7777"));
-        mPlaceList.add(new Place("El Imposible Park", R.drawable.el_imposible, "+503 2257 7777"));
-        mPlaceList.add(new Place("El Boquerón", R.drawable.el_boqueron, "+503 2257 7777"));
-        mPlaceList.add(new Place("El Pital", R.drawable.el_pital, "+503 2257 7777"));
-        mPlaceList.add(new Place("La Puerta del Diablo", R.drawable.la_puerta_del_diablo, "+503 2257 7777"));
-        mPlaceList.add(new Place("El Bicentenario", R.drawable.bicentenario, "+503 2257 7777"));
-        mPlaceList.add(new Place("Cerro verde", R.drawable.cerro_verde, "+503 2257 7777"));
-        mPlaceList.add(new Place("Walter Thilo Deininger Park", R.drawable.walter_thilo_deininger, "+503 2257 7777"));
-        mPlaceList.add(new Place("Jardín Botánico", R.drawable.jardin_botanico, "+503 2257 7777"));
+        mPlaceList.add(new Place("Izalco Volcano", R.drawable.volcan_izalco, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
+        mPlaceList.add(new Place("Santa Ana Volcano", R.drawable.volcan_santa_ana, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
+        mPlaceList.add(new Place("El Imposible Park", R.drawable.el_imposible, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
+        mPlaceList.add(new Place("El Boquerón", R.drawable.el_boqueron, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
+        mPlaceList.add(new Place("El Pital", R.drawable.el_pital, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
+        mPlaceList.add(new Place("La Puerta del Diablo", R.drawable.la_puerta_del_diablo, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
+        mPlaceList.add(new Place("El Bicentenario", R.drawable.bicentenario, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
+        mPlaceList.add(new Place("Cerro verde", R.drawable.cerro_verde, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
+        mPlaceList.add(new Place("Walter Thilo Deininger Park", R.drawable.walter_thilo_deininger, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
+        mPlaceList.add(new Place("Jardín Botánico", R.drawable.jardin_botanico, "+503 2257 7777", "https://developer.android.com/guide/webapps/webview"));
     }
 
     @Override

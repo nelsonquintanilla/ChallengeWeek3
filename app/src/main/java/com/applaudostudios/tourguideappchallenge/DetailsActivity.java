@@ -12,11 +12,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toolbar;
 
-public class DetailsActivity extends AppCompatActivity {
+public class DetailsActivity extends AppCompatActivity implements View.OnClickListener{
     private static final String EXTRA_DETAIL = "EXTRA_DETAIL";
     private Place mPlace;
     private String mPhoneNumber;
 
+    // Method that is implemented in each fragment to pass in the context and place
     public static Intent getInstance(Context context, Place place){
         Intent intent = new Intent(context, DetailsActivity.class);
         intent.putExtra(EXTRA_DETAIL, place);
@@ -30,22 +31,19 @@ public class DetailsActivity extends AppCompatActivity {
         mPlace = getIntent().getParcelableExtra(EXTRA_DETAIL);
         mPhoneNumber=mPlace.getPhoneNumber();
 
+        // Set the up button
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
+        ImageView website = findViewById(R.id.website_button);
+        website.setOnClickListener(this);
+
         ImageView phone = findViewById(R.id.phone_button);
-        phone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                String temp = "tel:" + mPhoneNumber;
-                intent.setData(Uri.parse(temp));
-                startActivity(intent);
-            }
-        });
+        phone.setOnClickListener(this);
     }
 
+    // up button logic
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -55,5 +53,20 @@ public class DetailsActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch(view.getId()) {
+            case R.id.phone_button:
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                String temp = "tel:" + mPhoneNumber;
+                intent.setData(Uri.parse(temp));
+                startActivity(intent);
+                break;
+            case R.id.website_button:
+                startActivity(WebViewActivity.getInstance(this, mPlace.getWebsite()));
+                break;
+        }
     }
 }
