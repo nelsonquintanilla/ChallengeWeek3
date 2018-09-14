@@ -37,9 +37,9 @@ public class BeachesFragment extends Fragment implements CallBack{
 
         v = inflater.inflate(R.layout.fragment_beaches, container, false);
         myRecyclerView = v.findViewById(R.id.recycler_view_beaches);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), mPlaceList);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(mPlaceList, this);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerViewAdapter.setCallBack(this);
+//        recyclerViewAdapter.setCallBack(this);
         myRecyclerView.setAdapter(recyclerViewAdapter);
         return v;
     }
@@ -49,19 +49,19 @@ public class BeachesFragment extends Fragment implements CallBack{
         super.onCreate(savedInstanceState);
 
         mPlaceList = new ArrayList<>();
-        mPlaceList.add(new Place("Los Cóbanos", R.drawable.los_cobanos));
-        mPlaceList.add(new Place("Salinitas", R.drawable.salinitas));
-        mPlaceList.add(new Place("El Tunco", R.drawable.el_tunco));
-        mPlaceList.add(new Place("El Zonte", R.drawable.el_zonte));
-        mPlaceList.add(new Place("Costa del Sol", R.drawable.costa_del_sol));
-        mPlaceList.add(new Place("Costa Azúl", R.drawable.costa_azul));
-        mPlaceList.add(new Place("El Cuco", R.drawable.el_cuco));
-        mPlaceList.add(new Place("Puerto La Libertad", R.drawable.port_la_libertad));
+        mPlaceList.add(new Place("Los Cóbanos", R.drawable.los_cobanos, "+503 2257 7777"));
+        mPlaceList.add(new Place("Salinitas", R.drawable.salinitas, "+503 2257 7777"));
+        mPlaceList.add(new Place("El Tunco", R.drawable.el_tunco, "+503 2257 7777"));
+        mPlaceList.add(new Place("El Zonte", R.drawable.el_zonte, "+503 2257 7777"));
+        mPlaceList.add(new Place("Costa del Sol", R.drawable.costa_del_sol, "+503 2257 7777"));
+        mPlaceList.add(new Place("Costa Azúl", R.drawable.costa_azul, "+503 2257 7777"));
+        mPlaceList.add(new Place("El Cuco", R.drawable.el_cuco, "+503 2222 2222"));
+        mPlaceList.add(new Place("Puerto La Libertad", R.drawable.port_la_libertad, "+503 2257 7777"));
 
     }
 
     @Override
-    public void onItemClick() {
-        startActivity(new Intent(getActivity(), DetailsActivity.class));
+    public void onItemClick(int position) {
+        startActivity(DetailsActivity.getInstance(getContext(), mPlaceList.get(position)));
     }
 }

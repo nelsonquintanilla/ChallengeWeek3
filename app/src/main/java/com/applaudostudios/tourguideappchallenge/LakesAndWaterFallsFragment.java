@@ -23,6 +23,7 @@ public class LakesAndWaterFallsFragment extends Fragment implements CallBack {
     View v;
     private RecyclerView myRecyclerView;
     private List<Place> mPlaceList;
+    private static final String EXTRA_DETAIL = "EXTRA_DETAIL";
 
     public LakesAndWaterFallsFragment() {
         // Required empty public constructor
@@ -34,9 +35,8 @@ public class LakesAndWaterFallsFragment extends Fragment implements CallBack {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_lakes_and_waterfalls, container, false);
         myRecyclerView = v.findViewById(R.id.recycler_view_lakes_and_waterfalls);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), mPlaceList);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(mPlaceList, this);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerViewAdapter.setCallBack(this);
         myRecyclerView.setAdapter(recyclerViewAdapter);
         return v;
     }
@@ -46,17 +46,19 @@ public class LakesAndWaterFallsFragment extends Fragment implements CallBack {
         super.onCreate(savedInstanceState);
 
         mPlaceList = new ArrayList<>();
-        mPlaceList.add(new Place("Alegria Lagoon", R.drawable.laguna_de_alegria));
-        mPlaceList.add(new Place("Los Tercios Waterfalls", R.drawable.los_tercios));
-        mPlaceList.add(new Place("Suchitlán Lake", R.drawable.suchitlan));
-        mPlaceList.add(new Place("Tamanique Waterfalls", R.drawable.tamanique));
-        mPlaceList.add(new Place("Chorros de la Calera Waterfalls", R.drawable.chorros_de_la_calera));
-        mPlaceList.add(new Place("Golfo de Fonseca", R.drawable.golfo_de_fonseca));
-        mPlaceList.add(new Place("Coatepeque Lake", R.drawable.lago_de_coatepeque));
+        mPlaceList.add(new Place("Alegria Lagoon", R.drawable.laguna_de_alegria, "+503 2257 7777"));
+        mPlaceList.add(new Place("Los Tercios Waterfalls", R.drawable.los_tercios, "+503 2257 7777"));
+        mPlaceList.add(new Place("Suchitlán Lake", R.drawable.suchitlan, "+503 2257 7777"));
+        mPlaceList.add(new Place("Tamanique Waterfalls", R.drawable.tamanique, "+503 2257 7777"));
+        mPlaceList.add(new Place("Chorros de la Calera Waterfalls", R.drawable.chorros_de_la_calera, "+503 2257 7777"));
+        mPlaceList.add(new Place("Golfo de Fonseca", R.drawable.golfo_de_fonseca, "+503 2257 7777"));
+        mPlaceList.add(new Place("Coatepeque Lake", R.drawable.lago_de_coatepeque, "+503 2257 7777"));
     }
 
     @Override
-    public void onItemClick() {
-        startActivity(new Intent(getActivity(), DetailsActivity.class));
+    public void onItemClick(int position) {
+        Intent intent = new Intent(getActivity(), DetailsActivity.class);
+        intent.putExtra(EXTRA_DETAIL, mPlaceList.get(position));
+        startActivity(intent);
     }
 }

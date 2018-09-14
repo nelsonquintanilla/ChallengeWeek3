@@ -22,6 +22,7 @@ public class TownsAndArchaeologicalPlacesFragment extends Fragment implements Ca
     View v;
     private RecyclerView myRecyclerView;
     private List<Place> mPlaceList;
+    private static final String EXTRA_DETAIL = "EXTRA_DETAIL";
 
     public TownsAndArchaeologicalPlacesFragment() {
         // Required empty public constructor
@@ -34,9 +35,8 @@ public class TownsAndArchaeologicalPlacesFragment extends Fragment implements Ca
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_towns_and_archaeological_places, container, false);
         myRecyclerView = v.findViewById(R.id.recycler_view_towns_and_archaeological_places);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), mPlaceList);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(mPlaceList, this);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerViewAdapter.setCallBack(this);
         myRecyclerView.setAdapter(recyclerViewAdapter);
         return v;
     }
@@ -46,17 +46,19 @@ public class TownsAndArchaeologicalPlacesFragment extends Fragment implements Ca
         super.onCreate(savedInstanceState);
 
         mPlaceList = new ArrayList<>();
-        mPlaceList.add(new Place("Atáco", R.drawable.ataco));
-        mPlaceList.add(new Place("Apaneca", R.drawable.apaneca));
-        mPlaceList.add(new Place("Nahuizalco", R.drawable.nahuizalco));
-        mPlaceList.add(new Place("Suchitoto", R.drawable.suchitoto));
-        mPlaceList.add(new Place("San Andrés", R.drawable.san_andres));
-        mPlaceList.add(new Place("Juayúa", R.drawable.juayua));
-        mPlaceList.add(new Place("The Maya ruins of Tazumal", R.drawable.tazumal));
+        mPlaceList.add(new Place("Atáco", R.drawable.ataco, "+503 2257 7777"));
+        mPlaceList.add(new Place("Apaneca", R.drawable.apaneca, "+503 2257 7777"));
+        mPlaceList.add(new Place("Nahuizalco", R.drawable.nahuizalco, "+503 2257 7777"));
+        mPlaceList.add(new Place("Suchitoto", R.drawable.suchitoto, "+503 2257 7777"));
+        mPlaceList.add(new Place("San Andrés", R.drawable.san_andres, "+503 2257 7777"));
+        mPlaceList.add(new Place("Juayúa", R.drawable.juayua, "+503 2257 7777"));
+        mPlaceList.add(new Place("The Maya ruins of Tazumal", R.drawable.tazumal, "+503 2257 7777"));
     }
 
     @Override
-    public void onItemClick() {
-        startActivity(new Intent(getActivity(), DetailsActivity.class));
+    public void onItemClick(int position) {
+        Intent intent = new Intent(getActivity(), DetailsActivity.class);
+        intent.putExtra(EXTRA_DETAIL, mPlaceList.get(position));
+        startActivity(intent);
     }
 }

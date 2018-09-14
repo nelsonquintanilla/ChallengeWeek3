@@ -21,6 +21,7 @@ public class HikingFragment extends Fragment implements CallBack {
     View v;
     private RecyclerView myRecyclerView;
     private List<Place> mPlaceList;
+    private static final String EXTRA_DETAIL = "EXTRA_DETAIL";
 
     public HikingFragment() {
         // Required empty public constructor
@@ -32,9 +33,8 @@ public class HikingFragment extends Fragment implements CallBack {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_hiking, container, false);
         myRecyclerView = v.findViewById(R.id.recycler_view_hiking_places);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), mPlaceList);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(mPlaceList, this);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerViewAdapter.setCallBack(this);
         myRecyclerView.setAdapter(recyclerViewAdapter);
         return v;
     }
@@ -44,20 +44,22 @@ public class HikingFragment extends Fragment implements CallBack {
         super.onCreate(savedInstanceState);
 
         mPlaceList = new ArrayList<>();
-        mPlaceList.add(new Place("Izalco Volcano", R.drawable.volcan_izalco));
-        mPlaceList.add(new Place("Santa Ana Volcano", R.drawable.volcan_santa_ana));
-        mPlaceList.add(new Place("El Imposible Park", R.drawable.el_imposible));
-        mPlaceList.add(new Place("El Boquerón", R.drawable.el_boqueron));
-        mPlaceList.add(new Place("El Pital", R.drawable.el_pital));
-        mPlaceList.add(new Place("La Puerta del Diablo", R.drawable.la_puerta_del_diablo));
-        mPlaceList.add(new Place("El Bicentenario", R.drawable.bicentenario));
-        mPlaceList.add(new Place("Cerro verde", R.drawable.cerro_verde));
-        mPlaceList.add(new Place("Walter Thilo Deininger Park", R.drawable.walter_thilo_deininger));
-        mPlaceList.add(new Place("Jardín Botánico", R.drawable.jardin_botanico));
+        mPlaceList.add(new Place("Izalco Volcano", R.drawable.volcan_izalco, "+503 2257 7777"));
+        mPlaceList.add(new Place("Santa Ana Volcano", R.drawable.volcan_santa_ana, "+503 2257 7777"));
+        mPlaceList.add(new Place("El Imposible Park", R.drawable.el_imposible, "+503 2257 7777"));
+        mPlaceList.add(new Place("El Boquerón", R.drawable.el_boqueron, "+503 2257 7777"));
+        mPlaceList.add(new Place("El Pital", R.drawable.el_pital, "+503 2257 7777"));
+        mPlaceList.add(new Place("La Puerta del Diablo", R.drawable.la_puerta_del_diablo, "+503 2257 7777"));
+        mPlaceList.add(new Place("El Bicentenario", R.drawable.bicentenario, "+503 2257 7777"));
+        mPlaceList.add(new Place("Cerro verde", R.drawable.cerro_verde, "+503 2257 7777"));
+        mPlaceList.add(new Place("Walter Thilo Deininger Park", R.drawable.walter_thilo_deininger, "+503 2257 7777"));
+        mPlaceList.add(new Place("Jardín Botánico", R.drawable.jardin_botanico, "+503 2257 7777"));
     }
 
     @Override
-    public void onItemClick() {
-        startActivity(new Intent(getActivity(), DetailsActivity.class));
+    public void onItemClick(int position) {
+        Intent intent = new Intent(getActivity(), DetailsActivity.class);
+        intent.putExtra(EXTRA_DETAIL, mPlaceList.get(position));
+        startActivity(intent);
     }
 }
