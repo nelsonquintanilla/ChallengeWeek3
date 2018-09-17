@@ -12,72 +12,43 @@ public class Place implements Parcelable {
     private String latitude;
     private String longitude;
 
-    public String getInformation() {
-        return information;
+    Place(String name, int photo, String phoneNumber, String website, String information, String latitude, String longitude) {
+        this.name = name;
+        this.photo = photo;
+        this.phoneNumber = phoneNumber;
+        this.website = website;
+        this.information = information;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
-    public void setInformation(String information) {
-        this.information = information;
+    public String getInformation() {
+        return information;
     }
 
     public String getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
-    }
-
     public String getLongitude() {
         return longitude;
-    }
-
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
-    }
-
-    public Place(String name, int photo, String phoneNumber, String website, String information, String latitude, String longitude) {
-        this.name = name;
-        this.photo = photo;
-        this.phoneNumber = phoneNumber;
-        this.website = website;
-        this.information = information;
-        this.latitude = latitude;
-        this.longitude = longitude;
     }
 
     public String getWebsite() {
         return website;
     }
 
-    public void setWebsite(String website) {
-        this.website = website;
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getPhoto() {
         return photo;
     }
-
-    public void setPhoto(int photo) {
-        this.photo = photo;
-    }
-
 
     @Override
     public int describeContents() {
@@ -95,7 +66,7 @@ public class Place implements Parcelable {
         dest.writeString(this.longitude);
     }
 
-    protected Place(Parcel in) {
+    private Place(Parcel in) {
         this.name = in.readString();
         this.photo = in.readInt();
         this.phoneNumber = in.readString();

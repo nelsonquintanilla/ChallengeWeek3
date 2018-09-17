@@ -15,7 +15,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private List<Place> mData;
     private CallBack mCallBack;
 
-    public RecyclerViewAdapter(List<Place> data, CallBack callBack) {
+    RecyclerViewAdapter(List<Place> data, CallBack callBack) {
         mData = data;
         mCallBack = callBack;
     }
@@ -25,8 +25,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v;
         v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_place, parent, false);
-        final MyViewHolder myViewHolder = new MyViewHolder(v);
-        return myViewHolder;
+        return new MyViewHolder(v);
     }
 
     @Override
@@ -40,12 +39,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return mData.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView title;
         private ImageView image;
         private ConstraintLayout itemPlace;
 
-        public MyViewHolder(View itemView) {
+        private MyViewHolder(View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.place_name);
             image = itemView.findViewById(R.id.image_place);

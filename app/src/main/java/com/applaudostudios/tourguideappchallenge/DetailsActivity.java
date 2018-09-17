@@ -3,27 +3,22 @@ package com.applaudostudios.tourguideappchallenge;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v4.app.NavUtils;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
-public class DetailsActivity extends AppCompatActivity implements View.OnClickListener{
+public class DetailsActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String EXTRA_DETAIL = "EXTRA_DETAIL";
     private Place mPlace;
     private String mPhoneNumber;
-    private int mImage;
-    private String mInformation;
     private String mLatitude;
     private String mLongitude;
 
     // Method that is implemented in each fragment to pass in the context and place
-    public static Intent getInstance(Context context, Place place){
+    public static Intent getInstance(Context context, Place place) {
         Intent intent = new Intent(context, DetailsActivity.class);
         intent.putExtra(EXTRA_DETAIL, place);
         return intent;
@@ -34,14 +29,14 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
         mPlace = getIntent().getParcelableExtra(EXTRA_DETAIL);
-        mPhoneNumber=mPlace.getPhoneNumber();
-        mImage=mPlace.getPhoto();
-        mInformation=mPlace.getInformation();
-        mLatitude=mPlace.getLatitude();
-        mLongitude=mPlace.getLongitude();
+        mPhoneNumber = mPlace.getPhoneNumber();
+        int mImage = mPlace.getPhoto();
+        String mInformation = mPlace.getInformation();
+        mLatitude = mPlace.getLatitude();
+        mLongitude = mPlace.getLongitude();
 
         // Set the up button
-        if(getSupportActionBar() != null){
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
@@ -75,7 +70,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-        switch(view.getId()) {
+        switch (view.getId()) {
             case R.id.phone_button:
                 Intent intent = new Intent(Intent.ACTION_DIAL);
                 String temp = "tel:" + mPhoneNumber;

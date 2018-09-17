@@ -4,8 +4,9 @@
     android:id="@+id/recycler_view_towns_and_archaeological_places"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFB74D"
     android:scrollbars="vertical"
-    tools:context=".TownsAndArchaeologicalPlacesFragment" >
+    tools:context=".TownsAndArchaeologicalPlacesFragment">
 
 </android.support.v7.widget.RecyclerView>
 

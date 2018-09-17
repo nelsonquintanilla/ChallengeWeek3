@@ -4,6 +4,7 @@
     android:id="@+id/recycler_view_beaches"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#64FFDA"
     android:scrollbars="vertical"
     tools:context=".BeachesFragment">
 

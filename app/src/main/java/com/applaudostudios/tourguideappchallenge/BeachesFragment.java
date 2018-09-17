@@ -1,9 +1,7 @@
 package com.applaudostudios.tourguideappchallenge;
 
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,9 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.RadioButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +17,8 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BeachesFragment extends Fragment implements CallBack{
+public class BeachesFragment extends Fragment implements CallBack {
     View v;
-    private RecyclerView myRecyclerView;
     private List<Place> mPlaceList;
 
     public BeachesFragment() {
@@ -32,11 +26,11 @@ public class BeachesFragment extends Fragment implements CallBack{
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         v = inflater.inflate(R.layout.fragment_beaches, container, false);
-        myRecyclerView = v.findViewById(R.id.recycler_view_beaches);
+        RecyclerView myRecyclerView = v.findViewById(R.id.recycler_view_beaches);
         myRecyclerView.setHasFixedSize(true);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(mPlaceList, this);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -49,7 +43,7 @@ public class BeachesFragment extends Fragment implements CallBack{
         super.onCreate(savedInstanceState);
 
         mPlaceList = new ArrayList<>();
-        mPlaceList.add(new Place("Los Cóbanos", R.drawable.los_cobanos, "+503 2257 7777", "http://www.turismo.com.sv/destinos/playa-los-cobanos.php", "The beautiful Playa Los Cóbanos is located in the Department of Sonsonate, without doubt has great beauty that makes it an ideal place to visit, is characterized by almost white sand, which does not look much at home because the coast is volcanic sand. The beach consists of reefs that are protected by remnants of cliffs that serve as natural breakwaters and create a safe place for bathing.", "13.525", "-89.797" ));
+        mPlaceList.add(new Place("Los Cóbanos", R.drawable.los_cobanos, "+503 2257 7777", "http://www.turismo.com.sv/destinos/playa-los-cobanos.php", "The beautiful Playa Los Cóbanos is located in the Department of Sonsonate, without doubt has great beauty that makes it an ideal place to visit, is characterized by almost white sand, which does not look much at home because the coast is volcanic sand. The beach consists of reefs that are protected by remnants of cliffs that serve as natural breakwaters and create a safe place for bathing.", "13.525", "-89.797"));
         mPlaceList.add(new Place("Salinitas", R.drawable.salinitas, "+503 2257 7777", "http://www.mitur.gob.sv/travel/playa-salinitas/", "While Playa Salinitas isn't the cleanest beach, its sands are vast, and there's always something to do in or around the water. It's also one of the most visited beaches in El Salvador, so expect to share this sandy strip with crowds of locals and tourists.", "13.68935", "-89.18718"));
         mPlaceList.add(new Place("El Tunco", R.drawable.el_tunco, "+503 2257 7777", "http://www.mitur.gob.sv/en/travel/playa-el-tunco/", "Playa El Tunco is located just 31 minutes away from the  international airport, is one of the most popular beach town, the surf is very consistence and for all levels, having two different breaks, a rocky pointbreak named Sunzal and a rivermouth with left and rights waves named Bocana, in the town you find several hotels, bars and restuarants, very popular for the live music parties during the weekends.", "13.492", "-89.381"));
         mPlaceList.add(new Place("El Zonte", R.drawable.el_zonte, "+503 2257 7777", "http://www.mitur.gob.sv/en/travel/playa-el-zonte-2/", "In El Zonte you will find a few spots where you can surf, the most popular is the breakpoint, with rocky bottom break a nice mellow wave, very stron with bigger sweels, to the west you find a river mouth that breaks different sections, left waves most of the time, and at the end you will find a beach break with left and right and close up sections, in the rain season the beach is full of rocks and with big waves is very hard to surf, is perfect spot for middle size sweels", "13.433", "-89.050"));

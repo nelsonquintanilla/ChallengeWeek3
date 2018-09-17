@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">TourGuideAppChallenge</string>
+    <string name="place_name">Place name</string>
+    <string name="image_place">image_place</string>
+    <string name="information_about_the_place">Information about the place</string>
+    <string name="location_button_description">location_button_description</string>
+    <string name="website_button_description">website_button_description</string>
+    <string name="phone_button_description">phone_button_description</string>
+    <string name="image_place_description">image_place_description</string>
 
 </resources>

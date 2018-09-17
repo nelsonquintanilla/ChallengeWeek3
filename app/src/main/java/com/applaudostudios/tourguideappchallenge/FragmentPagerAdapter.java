@@ -11,7 +11,7 @@ public class FragmentPagerAdapter extends android.support.v4.app.FragmentPagerAd
     private final List<Fragment> fragmentList = new ArrayList<>();
     private final List<String> titlesList = new ArrayList<>();
 
-    public FragmentPagerAdapter(FragmentManager fm) {
+    FragmentPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
@@ -34,7 +34,7 @@ public class FragmentPagerAdapter extends android.support.v4.app.FragmentPagerAd
         return titlesList.get(position);
     }
 
-    public void AddFragment (Fragment fragment, String title) {
+    public void AddFragment(Fragment fragment, String title) {
         fragmentList.add(fragment);
         titlesList.add(title);
     }
