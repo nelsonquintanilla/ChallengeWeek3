@@ -1,4 +1,4 @@
-package com.applaudostudios.tourguideappchallenge;
+package com.applaudostudios.tourguideappchallenge.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -12,7 +12,7 @@ public class Place implements Parcelable {
     private String latitude;
     private String longitude;
 
-    Place(String name, int photo, String phoneNumber, String website, String information, String latitude, String longitude) {
+    public Place(String name, int photo, String phoneNumber, String website, String information, String latitude, String longitude) {
         this.name = name;
         this.photo = photo;
         this.phoneNumber = phoneNumber;

@@ -6,6 +6,12 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.applaudostudios.tourguideappchallenge.adapters.FragmentPagerAdapter;
+import com.applaudostudios.tourguideappchallenge.fragments.BeachesFragment;
+import com.applaudostudios.tourguideappchallenge.fragments.HikingFragment;
+import com.applaudostudios.tourguideappchallenge.fragments.LakesAndWaterFallsFragment;
+import com.applaudostudios.tourguideappchallenge.fragments.TownsAndArchaeologicalPlacesFragment;
+
 public class MainActivity extends AppCompatActivity {
 
 

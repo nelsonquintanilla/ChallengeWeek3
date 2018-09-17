@@ -1,4 +1,4 @@
-package com.applaudostudios.tourguideappchallenge;
+package com.applaudostudios.tourguideappchallenge.adapters;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,7 +11,7 @@ public class FragmentPagerAdapter extends android.support.v4.app.FragmentPagerAd
     private final List<Fragment> fragmentList = new ArrayList<>();
     private final List<String> titlesList = new ArrayList<>();
 
-    FragmentPagerAdapter(FragmentManager fm) {
+    public FragmentPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 

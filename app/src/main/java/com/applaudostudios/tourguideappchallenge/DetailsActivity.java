@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.applaudostudios.tourguideappchallenge.model.Place;
+
 public class DetailsActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String EXTRA_DETAIL = "EXTRA_DETAIL";
     private Place mPlace;

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFFF00"
     android:scrollbars="vertical"
-    tools:context=".LakesAndWaterFallsFragment">
+    tools:context=".fragments.LakesAndWaterFallsFragment">
 
 </android.support.v7.widget.RecyclerView>
 

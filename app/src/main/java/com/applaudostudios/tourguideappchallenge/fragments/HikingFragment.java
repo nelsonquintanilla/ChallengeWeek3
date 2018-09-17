@@ -1,4 +1,4 @@
-package com.applaudostudios.tourguideappchallenge;
+package com.applaudostudios.tourguideappchallenge.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.applaudostudios.tourguideappchallenge.CallBack;
+import com.applaudostudios.tourguideappchallenge.DetailsActivity;
+import com.applaudostudios.tourguideappchallenge.R;
+import com.applaudostudios.tourguideappchallenge.adapters.RecyclerViewAdapter;
+import com.applaudostudios.tourguideappchallenge.model.Place;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.applaudostudios.tourguideappchallenge;
+package com.applaudostudios.tourguideappchallenge.adapters;
 
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
@@ -9,13 +9,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.applaudostudios.tourguideappchallenge.CallBack;
+import com.applaudostudios.tourguideappchallenge.R;
+import com.applaudostudios.tourguideappchallenge.model.Place;
+
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
     private List<Place> mData;
     private CallBack mCallBack;
 
-    RecyclerViewAdapter(List<Place> data, CallBack callBack) {
+    public RecyclerViewAdapter(List<Place> data, CallBack callBack) {
         mData = data;
         mCallBack = callBack;
     }

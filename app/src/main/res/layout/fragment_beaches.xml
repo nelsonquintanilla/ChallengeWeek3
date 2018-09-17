@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     android:background="#64FFDA"
     android:scrollbars="vertical"
-    tools:context=".BeachesFragment">
+    tools:context=".fragments.BeachesFragment">
 
 </android.support.v7.widget.RecyclerView>

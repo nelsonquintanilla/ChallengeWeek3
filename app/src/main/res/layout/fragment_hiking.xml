@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     android:background="#76FF03"
     android:scrollbars="vertical"
-    tools:context=".HikingFragment">
+    tools:context=".fragments.HikingFragment">
 
 </android.support.v7.widget.RecyclerView>
