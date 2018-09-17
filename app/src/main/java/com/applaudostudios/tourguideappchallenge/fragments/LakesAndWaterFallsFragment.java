@@ -27,7 +27,6 @@ import java.util.List;
  */
 public class LakesAndWaterFallsFragment extends Fragment implements CallBack {
     View v;
-    private RecyclerView myRecyclerView;
     private List<Place> mPlaceList;
     private static final String EXTRA_DETAIL = "EXTRA_DETAIL";
 
@@ -40,7 +39,7 @@ public class LakesAndWaterFallsFragment extends Fragment implements CallBack {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_lakes_and_waterfalls, container, false);
-        myRecyclerView = v.findViewById(R.id.recycler_view_lakes_and_waterfalls);
+        RecyclerView myRecyclerView = v.findViewById(R.id.recycler_view_lakes_and_waterfalls);
         myRecyclerView.setHasFixedSize(true);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(mPlaceList, this);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
