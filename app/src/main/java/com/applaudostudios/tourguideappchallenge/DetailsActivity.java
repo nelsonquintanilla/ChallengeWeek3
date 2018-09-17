@@ -10,12 +10,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toolbar;
 
 public class DetailsActivity extends AppCompatActivity implements View.OnClickListener{
     private static final String EXTRA_DETAIL = "EXTRA_DETAIL";
     private Place mPlace;
     private String mPhoneNumber;
+    private int mImage;
+    private String mInformation;
 
     // Method that is implemented in each fragment to pass in the context and place
     public static Intent getInstance(Context context, Place place){
@@ -30,17 +33,28 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_details);
         mPlace = getIntent().getParcelableExtra(EXTRA_DETAIL);
         mPhoneNumber=mPlace.getPhoneNumber();
+        mImage=mPlace.getPhoto();
+        mInformation=mPlace.getInformation();
 
         // Set the up button
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
+        TextView information = findViewById(R.id.information_text_view);
+        information.setText(mInformation);
+
+        ImageView image = findViewById(R.id.image_place);
+        image.setImageDrawable(getResources().getDrawable(mImage));
+
         ImageView website = findViewById(R.id.website_button);
         website.setOnClickListener(this);
 
         ImageView phone = findViewById(R.id.phone_button);
         phone.setOnClickListener(this);
+
+        ImageView location = findViewById(R.id.location_button);
+        location.setOnClickListener(this);
     }
 
     // up button logic
@@ -66,6 +80,14 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.website_button:
                 startActivity(WebViewActivity.getInstance(this, mPlace.getWebsite()));
+                break;
+            case R.id.location_button:
+                Uri gmmIntentUri = Uri.parse("geo:37.7749,-122.4194?q=37.7749,-122.4194");
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(mapIntent);
+                }
                 break;
         }
     }
