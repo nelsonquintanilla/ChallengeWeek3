@@ -14,7 +14,6 @@ import com.applaudostudios.tourguideappchallenge.fragments.TownsAndArchaeologica
 
 public class MainActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,11 +23,16 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = findViewById(R.id.viewpager);
         FragmentPagerAdapter adapter = new FragmentPagerAdapter(getSupportFragmentManager());
 
+        // Adds each fragment into the adapter and assigns the name of the tabs
         adapter.AddFragment(new BeachesFragment(), "Beaches");
         adapter.AddFragment(new HikingFragment(), "Hiking Places");
         adapter.AddFragment(new TownsAndArchaeologicalPlacesFragment(), "Cultural Places");
         adapter.AddFragment(new LakesAndWaterFallsFragment(), "Lakes and Waterfalls");
+
+        //Sets the adapter to the ViewPager
         viewPager.setAdapter(adapter);
+
+        // Attaches the TabLayout to the ViewPager
         tabLayout.setupWithViewPager(viewPager);
 
         // Remove shadow from the action bar

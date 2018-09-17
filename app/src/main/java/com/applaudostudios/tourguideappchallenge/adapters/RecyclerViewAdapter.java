@@ -43,6 +43,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return mData.size();
     }
 
+    /**
+     * Creates a MyViewHolder class that contains methods and fields used in the
+     * RecyclerViewAdapter class when creating objects of type MyViewHolder
+     */
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView title;
         private ImageView image;

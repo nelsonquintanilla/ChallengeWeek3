@@ -37,11 +37,13 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         mLatitude = mPlace.getLatitude();
         mLongitude = mPlace.getLongitude();
 
-        // Set the up button
+        // Sets the up button
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
+        // Declaring and initializing views in the DetailsActivity
+        // Setting listeners for ImageViews that have to make and action when clicked
         TextView information = findViewById(R.id.information_text_view);
         information.setText(mInformation);
 
@@ -58,7 +60,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         location.setOnClickListener(this);
     }
 
-    // up button logic
+    // Up button logic
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -70,6 +72,11 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Has a switch case to take care of each button at the top of the activity
+     *
+     * @param view an ImageView
+     */
     @Override
     public void onClick(View view) {
         switch (view.getId()) {

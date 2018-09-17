@@ -34,6 +34,7 @@ public class FragmentPagerAdapter extends android.support.v4.app.FragmentPagerAd
         return titlesList.get(position);
     }
 
+    // Method used in the MainActivity
     public void AddFragment(Fragment fragment, String title) {
         fragmentList.add(fragment);
         titlesList.add(title);
