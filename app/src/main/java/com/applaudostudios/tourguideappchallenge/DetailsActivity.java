@@ -19,6 +19,8 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     private String mPhoneNumber;
     private int mImage;
     private String mInformation;
+    private String mLatitude;
+    private String mLongitude;
 
     // Method that is implemented in each fragment to pass in the context and place
     public static Intent getInstance(Context context, Place place){
@@ -35,6 +37,8 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         mPhoneNumber=mPlace.getPhoneNumber();
         mImage=mPlace.getPhoto();
         mInformation=mPlace.getInformation();
+        mLatitude=mPlace.getLatitude();
+        mLongitude=mPlace.getLongitude();
 
         // Set the up button
         if(getSupportActionBar() != null){
@@ -82,7 +86,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(WebViewActivity.getInstance(this, mPlace.getWebsite()));
                 break;
             case R.id.location_button:
-                Uri gmmIntentUri = Uri.parse("geo:37.7749,-122.4194?q=37.7749,-122.4194");
+                Uri gmmIntentUri = Uri.parse("geo:" + mLatitude + "," + mLongitude + "?q=" + mLatitude + "," + mLongitude);
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
                 if (mapIntent.resolveActivity(getPackageManager()) != null) {
